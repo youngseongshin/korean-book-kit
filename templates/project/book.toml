@@ -1,0 +1,51 @@
+# 새 책 설정 견본. 값 설명은 README의 ‘book.toml 항목’ 표 참고.
+# 완성 예시는 examples/demo/book.toml
+
+[book]
+title = "책 제목"
+subtitle = "부제"
+kicker = "표지 위쪽 작은 글씨"
+editor = "지은이 또는 ○○ 엮음"
+running_head = "책 제목"
+page_size = "148mm 210mm"
+
+[paths]
+stories = "stories"
+
+[art]
+cover = "cover"
+endpaper = "endpaper"
+
+[front]
+title_vignette = "teapot"
+dedication = "헌사 한 줄"
+epigraph = ["“제사(題詞) 첫 줄", "둘째 줄”"]
+epigraph_src = "— 출처"
+colophon = ["책 제목", "지은이 ○○○", "펴낸 날 2026년 ○월", "+ 이 책의 이야기는 허구입니다.", "+ 비매품"]
+
+[back]
+quote = ["“뒤표지에 실을 한 대목”"]
+src = "— 첫째 이야기에서"
+blurb = ["책 소개 두 줄.", "둘째 줄."]
+vignettes = ["kettle", "cup", "mug"]
+
+[text]
+interviewers = ["나"]
+cast_heading = "등장인물"
+
+[rules]
+forbidden_regex = ['—']
+retired = []
+
+[[parts]]
+file = "story1.txt"
+name = "첫째 이야기"
+tint = "#F4E4D2"
+accent = "TANG_D"
+art = "part1"
+vignettes = ["tangerine", "cup", "shoes", "teapot"]
+style = ""
+chapter_label = "label"
+cast = [["할머니", "여든하나."], ["나", "질문을 들고 찾아갔다."]]
+dialogue_names = []
+forbidden = []

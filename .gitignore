@@ -1,0 +1,11 @@
+build/
+work/
+history/
+draft.txt
+draft_review.txt
+__pycache__/
+*.pyc
+.DS_Store
+
+assets/fonts/*.ttf
+assets/vendor/paged.polyfill.js

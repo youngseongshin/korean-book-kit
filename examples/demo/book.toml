@@ -1,0 +1,79 @@
+# 데모 책: 키트의 모든 쪽 종류(표지, 간지, 등장인물, 도입부, 대담형, 소설형, 메모, 목록 면, 맺음 쪽)를 보여 준다.
+[book]
+title = "단추와 우산"
+subtitle = "키트 시연용 짧은 소설집"
+kicker = "두 편의 이야기"
+editor = "korean-book-kit"
+running_head = "단추와 우산"
+page_size = "148mm 210mm"
+
+[paths]
+stories = "stories"
+
+[art]
+cover = "cover"
+endpaper = "endpaper"
+
+[front]
+title_vignette = "teapot"
+dedication = "오래 고쳐 쓰는 사람들에게"
+epigraph = ["“똑같은 건 없어요.", "비슷한 거지.”"]
+epigraph_src = "첫째 이야기 「단추는 다시 달면 된다」에서"
+colophon = [
+  "단추와 우산",
+  "키트 시연용 짧은 소설집",
+  "+ 이 책의 이야기는 korean-book-kit 시연을 위해 지어낸 허구입니다.",
+  "+ 본문 고운바탕 · 제목 나눔명조 · 메모 나눔손글씨 펜 · 이름 고운돋움",
+]
+
+[back]
+quote = ["“우산은 둘 사이에서 한참 오락가락하다가,", "결국 가운데 섰다.”"]
+src = "둘째 이야기 「세탁소 앞 벤치」에서"
+blurb = ["수선집과 세탁소, 골목의 두 가게에서", "오래 함께 산 사람들을 만났다."]
+vignettes = ["spool", "umbrella", "cup"]
+
+[text]
+interviewers = ["나"]
+cast_heading = "이야기 속 사람들"
+memo_head_regex = '^(그날 밤 메모\.)\s*(.*)$'
+
+[ending]
+heading = "당신의 메모"
+question = "당신의 우산은 어느 쪽으로 기울어 있나요?"
+lines = 10
+foot = "다음 비 오는 날 다시 읽어 볼 것."
+accent = "INDIGO"
+
+[rules]
+forbidden_regex = ['—', '값[을은]?\s?(먼저\s)?(묻|물)']
+retired = []
+
+[[parts]]
+file = "story1.txt"
+name = "첫째 이야기"
+tint = "#F4E4D2"
+accent = "TANG_D"
+art = "part2"
+vignettes = ["spool", "cup", "bowl"]
+style = "대담 형식으로"
+chapter_label = "num"
+cast = [
+  ["할머니", "일흔아홉. 골목 수선집을 마흔 해 넘게 했다."],
+  ["할아버지", "여든둘. 가게에서는 보리차 담당이다."],
+  ["나", "공책을 들고 찾아갔다."],
+]
+dialogue_names = []
+forbidden = []
+
+[[parts]]
+file = "story2.txt"
+name = "둘째 이야기"
+tint = "#E2E8EE"
+accent = "INDIGO"
+art = "part4"
+vignettes = ["umbrella", "kettle"]
+style = "소설 형식으로"
+chapter_label = "label"
+cast = [["할머니와 할아버지", "비 오는 날마다 세탁소 앞 벤치에 앉는다."], ["나", "세탁물을 기다리며 지켜보았다."]]
+dialogue_names = []
+forbidden = []

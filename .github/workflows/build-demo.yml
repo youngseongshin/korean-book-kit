@@ -1,0 +1,43 @@
+name: Build demo artifacts
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - docs/demo.pdf
+      - docs/preview.png
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Install Chromium
+        run: playwright install --with-deps chromium
+      - name: Fetch pinned assets
+        run: python3 bookkit.py setup
+      - name: Build and verify demo
+        run: python3 bookkit.py all examples/demo
+      - name: Publish demo artifacts
+        run: |
+          mkdir -p docs
+          cp examples/demo/build/book.pdf docs/demo.pdf
+          cp examples/demo/build/proof/contact.png docs/preview.png
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/demo.pdf docs/preview.png
+          if git diff --cached --quiet; then
+            echo "Demo artifacts unchanged."
+          else
+            git commit -m "Build demo artifacts"
+            git push
+          fi
